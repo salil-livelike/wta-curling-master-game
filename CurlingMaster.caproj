@@ -445,7 +445,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="GameOverContinue" sid="981202202106622">
+            <object-type name="play_again_button" sid="981202202106622">
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable name="sound" sid="366580812072094" type="boolean" />
@@ -458,7 +458,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="a94" pingpong="0" repeatcount="0" repeatto="0" sid="298834534585360" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\salil\Downloads\continue (2).png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\salil\Downloads\Frame 1528569483.png">
                             <collision-poly>
                                 <point x="0.0666667" y="0.0666667" />
                                 <point x="0.5" y="0" />
@@ -1835,7 +1835,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="478339376514302" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\salil\Downloads\Frame 1528569416.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\salil\Downloads\Result screen.png">
                         <collision-poly>
                             <point x="0.0091954" y="0.00879121" />
                             <point x="0.990805" y="0.00879121" />
@@ -1853,7 +1853,7 @@
                     <behavior id="Pin" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="\\host.lan\Data\sprite-font-kippax-1783693439705.png" />
+            <texture original-source="C:\Users\salil\Downloads\sprite-font-kippax-1771337856258.png" />
         </object-type>
         <object-type name="score_main" sid="647525915817727">
             <plugin id="Spritefont2" />
@@ -1871,13 +1871,32 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="share_button" sid="891947599390415">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="284815870928304" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\salil\Downloads\Frame 7.png">
+                        <collision-poly>
+                            <point x="0.0201823" y="0.149038" />
+                            <point x="0.5" y="0" />
+                            <point x="0.979818" y="0.149038" />
+                            <point x="1" y="0.5" />
+                            <point x="0.980469" y="0.855769" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0195313" y="0.855769" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="btns" plugin-id="Sprite" sid="4115632043665425">
             <members>
                 <member>btn_Archivement</member>
                 <member>button</member>
-                <member>GameOverContinue</member>
+                <member>play_again_button</member>
             </members>
             <behaviors>
                 <behavior-type name="click_animation" sid="942344835244577">

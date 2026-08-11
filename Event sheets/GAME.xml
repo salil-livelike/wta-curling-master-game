@@ -1666,7 +1666,7 @@
         <event-block sid="108042818344385">
             <conditions>
                 <condition id="17" name="On tap object" sid="265501043659012" type="Touch">
-                    <param id="0" name="Object">GameOverContinue</param>
+                    <param id="0" name="Object">play_again_button</param>
                 </condition>
                 <condition id="-9" name="Layer is visible" sid="781076309883486" type="System">
                     <param id="0" name="Layer">&quot;gameover&quot;</param>

@@ -1099,8 +1099,8 @@
                         <x>320</x>
                         <y>568</y>
                         <z>0</z>
-                        <width>448.200805664</width>
-                        <height>468.807739258</height>
+                        <width>439.149475098</width>
+                        <height>635.783508301</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1108,7 +1108,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="GameOverContinue" uid="10">
+                <instance type="play_again_button" uid="10">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -1157,10 +1157,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>320</x>
-                        <y>704</y>
+                        <y>733.499206543</y>
                         <z>0</z>
-                        <width>320</width>
-                        <height>70</height>
+                        <width>317.525054932</width>
+                        <height>42.998184204</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1173,14 +1173,14 @@
                         <character-width>80</character-width>
                         <character-height>79</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>9999</text>
-                        <scale>1.5</scale>
+                        <text>123</text>
+                        <scale>1.2</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
-                        <character-spacing>-32</character-spacing>
+                        <character-spacing>-45</character-spacing>
                         <line-height>0</line-height>
                     </properties>
                     <behavior-instances>
@@ -1190,13 +1190,35 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>35.649200439</x>
-                        <y>407.280303955</y>
+                        <y>377.280303955</y>
                         <z>0</z>
                         <width>568.701599121</width>
                         <height>281.439361572</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="share_button" uid="15">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>320</x>
+                        <y>808</y>
+                        <z>0</z>
+                        <width>317.524993896</width>
+                        <height>42.998001099</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
