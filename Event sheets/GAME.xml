@@ -1736,6 +1736,35 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Share. Hands the run's score and the session best to the host and lets it own the share UI. LoadHighScore runs first, so high_score is re-synced from sessionStorage immediately before it is sent. Not gated on ArcadeAttemptExhausted - sharing should stay available once attempts are spent.</comment>
+        <event-block sid="4300000000000001">
+            <conditions>
+                <condition id="17" name="On tap object" sid="4300000000000002" type="Touch">
+                    <param id="0" name="Object">share_button</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="4300000000000003" type="System">
+                    <param id="0" name="Layer">&quot;gameover&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4300000000000004" type="System">
+                    <param id="0" name="Variable">page_gameover</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="4300000000000005" type="Function">
+                    <param id="0" name="Name">&quot;LoadHighScore&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="4300000000000007" type="Function">
+                    <param id="0" name="Name">&quot;SaveHighScore&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="17" name="Execute Javascript" sid="4300000000000006" type="Browser">
+                    <param id="0" name="Javascript">&quot;window.parent.postMessage({ type: &apos;shareGame&apos;, score: &quot; &amp; str(int(score)) &amp; &quot;, highScore: &quot; &amp; str(int(high_score)) &amp; &quot; }, &apos;*&apos;);&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <comment>Pull the session best in from sessionStorage and from the Arcade config. Takes a max in both directions, so it is idempotent and can never lower the value - order of arrival does not matter.</comment>
         <event-block sid="4100000000300922">
             <conditions>
