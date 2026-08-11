@@ -71,6 +71,8 @@
         <variable comment=" " constant="0" name="coinSave" sid="5821364065648305" static="0" type="number">0</variable>
         <variable comment=" " constant="0" name="coinUnlock" sid="3909668293718382" static="0" type="number">1000</variable>
         <variable constant="0" name="isSoundMute" sid="983372190869642" static="0" type="number">0</variable>
+        <variable comment="Session-best score, mirrored to sessionStorage as high_score" constant="0" name="high_score" sid="4100000000015838" static="0" type="number">0</variable>
+        <variable comment="Bounded poll counter used to pick up ArcadeScoreToDisplay after Get Game Config returns" constant="0" name="hs_poll" sid="4100000000023757" static="0" type="number">0</variable>
         <event-group description="" sid="5512247713974051" title="Start" />
         <comment>Start layout</comment>
         <event-block sid="2495083774454381">

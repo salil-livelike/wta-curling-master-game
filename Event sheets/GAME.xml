@@ -32,6 +32,10 @@
                 <action id="3" name="Get Game Config" sid="239563612261050" type="Arcade">
                     <param id="0" name="refetch">0</param>
                 </action>
+                <action id="0" name="Call function" sid="4100000000031676" type="Function">
+                    <param id="0" name="Name">&quot;LoadHighScore&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
                 <action id="4" name="Play Game" sid="922824509834000" type="Arcade">
                     <param id="0" name="optionsJson">&quot;&quot;</param>
                 </action>
@@ -233,11 +237,20 @@
                         <condition id="-4" name="Trigger once while true" sid="255633811113342" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="4100000000039595" type="player" />
                         <action id="-3" name="Create object" sid="778346387684265" type="System">
                             <param id="0" name="Object to create">player</param>
                             <param id="1" name="Layer">&quot;gameplay&quot;</param>
                             <param id="2" name="X">320</param>
                             <param id="3" name="Y">920</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4100000000047514" type="player">
+                            <param id="0" name="Instance variable">step</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4100000000055433" type="player">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="0" name="Call function" sid="411095790287486" type="Function">
                             <param id="0" name="Name">&quot;chooseBG&quot;</param>
@@ -1559,105 +1572,139 @@
                             <param id="0" name="Name">&quot;GameOver&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="2" name="Submit Analytics" sid="794391296271142" type="Arcade">
+                            <param id="0" name="eventName">&quot;submit_score&quot;</param>
+                            <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; score &amp; &quot;&quot;&quot;,&quot;&quot;tap_counter&quot;&quot;:&quot;&quot;&quot; &amp; tapcounter &amp; &quot;&quot;&quot;}&quot;</param>
+                        </action>
+                        <action id="5" name="Invoke Action" sid="535024688316402" type="Arcade">
+                            <param id="0" name="actionName">&quot;submit_score&quot;</param>
+                            <param id="1" name="optionsJson">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="4100000000063352" type="Function">
+                            <param id="0" name="Name">&quot;LoadHighScore&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
                     <sub-events>
-                        <event-block sid="423621743738769">
+                        <comment>High-score-only mode: submit the gain over the session best, so repeat attempts cannot double-count.</comment>
+                        <event-block sid="4100000000071271">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="245778994095113" type="System" />
+                                <condition id="-14" name="Compare variable" sid="4100000000079190" type="System">
+                                    <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="4100000000087109" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">high_score</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="2" name="Submit Analytics" sid="794391296271142" type="Arcade">
-                                    <param id="0" name="eventName">&quot;submit_score&quot;</param>
-                                    <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; score &amp; &quot;&quot;&quot;,&quot;&quot;tap_counter&quot;&quot;:&quot;&quot;&quot; &amp; tapcounter &amp; &quot;&quot;&quot;}&quot;</param>
-                                </action>
-                                <action id="5" name="Invoke Action" sid="535024688316402" type="Arcade">
-                                    <param id="0" name="actionName">&quot;submit_score&quot;</param>
-                                    <param id="1" name="optionsJson">&quot;&quot;</param>
+                                <action id="1" name="Submit Score" sid="4100000000095028" type="Arcade">
+                                    <param id="0" name="score">score-high_score</param>
+                                    <param id="1" name="scoreToDisplay">score</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <variable constant="0" name="TempNew" sid="257333942190369" static="0" type="number">0</variable>
-                                <event-block sid="236746358171581">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="288632464993354" type="System">
-                                            <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="501115139828954" type="System">
-                                            <param id="0" name="Variable">ArcadeScoreToDisplay</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">score</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action disabled="1" id="-9" name="Set value" sid="633786525780714" type="System">
-                                            <param id="0" name="Variable">score</param>
-                                            <param id="1" name="Value">(score)-ArcadeScoreToDisplay</param>
-                                        </action>
-                                        <action disabled="1" id="1" name="Submit Score" sid="196455040961978" type="Arcade">
-                                            <param id="0" name="score">(score)-ArcadeScoreToDisplay</param>
-                                            <param id="1" name="scoreToDisplay">score</param>
-                                        </action>
-                                        <action disabled="1" id="14" name="Log" sid="176814057428915" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;ScoreFrom Trigger value&quot; &amp;score</param>
-                                        </action>
-                                        <action disabled="1" id="14" name="Log" sid="555965020478529" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;ArcadeScoreToDisplay Trigger value&quot; &amp;ArcadeScoreToDisplay</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="373209695846448" type="System">
-                                            <param id="0" name="Variable">TempNew</param>
-                                            <param id="1" name="Value">score-ArcadeScoreToDisplay</param>
-                                        </action>
-                                        <action disabled="1" id="14" name="Log" sid="381730784554877" type="Browser">
-                                            <param id="0" name="Type">0</param>
-                                            <param id="1" name="Message">&quot;Temp Trigger value&quot; &amp;TempNew</param>
-                                        </action>
-                                        <action id="1" name="Submit Score" sid="205940190020402" type="Arcade">
-                                            <param id="0" name="score">TempNew</param>
-                                            <param id="1" name="scoreToDisplay">score</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="652589382196741" type="System">
-                                            <param id="0" name="Variable">tapcounter</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
-                        <event-block sid="286981188817016">
+                        <comment>Cumulative mode: submit every attempt as-is.</comment>
+                        <event-block sid="4100000000102947">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="593477464296952" type="System" />
+                                <condition id="-14" name="Compare variable" sid="4100000000110866" type="System">
+                                    <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="677998914647487">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="702681211807789" type="System">
-                                            <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                        <condition disabled="1" id="-14" name="Compare variable" sid="926885566811477" type="System">
-                                            <param id="0" name="Variable">ArcadeScore</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">score</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="1" name="Submit Score" sid="415213835163185" type="Arcade">
-                                            <param id="0" name="score">score</param>
-                                            <param id="1" name="scoreToDisplay">score</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="948494009803130" type="System">
-                                            <param id="0" name="Variable">tapcounter</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="1" name="Submit Score" sid="4100000000118785" type="Arcade">
+                                    <param id="0" name="score">score</param>
+                                    <param id="1" name="scoreToDisplay">score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Game over message. These three read high_score BEFORE it is raised below, so the comparison is against the previous best.</comment>
+                        <event-block sid="4100000000134623">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4100000000126704" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4100000000142542" type="msg_gameover">
+                                    <param id="0" name="Text">&quot;No points this&quot; &amp; newline &amp; &quot;time. Go again?&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4100000000166299">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4100000000150461" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="4100000000158380" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">high_score</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4100000000174218" type="msg_gameover">
+                                    <param id="0" name="Text">&quot;New personal best&quot; &amp; newline &amp; &quot;- perfect timing!&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4100000000197975">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4100000000182137" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="4100000000190056" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">high_score</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="4100000000205894" type="msg_gameover">
+                                    <param id="0" name="Text">&quot;Your best: &quot; &amp; high_score &amp; &quot;.&quot; &amp; newline &amp; &quot;Go again?&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Raise and persist the session high score.</comment>
+                        <event-block sid="4100000000213813">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4100000000221732" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">high_score</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4100000000229651" type="System">
+                                    <param id="0" name="Variable">high_score</param>
+                                    <param id="1" name="Value">score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4100000000237570">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="4100000000245489" type="Function">
+                                    <param id="0" name="Name">&quot;SaveHighScore&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4100000000253408" type="System">
+                                    <param id="0" name="Variable">tapcounter</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1671,10 +1718,198 @@
                 <condition id="-9" name="Layer is visible" sid="781076309883486" type="System">
                     <param id="0" name="Layer">&quot;gameover&quot;</param>
                 </condition>
+                <condition id="-14" name="Compare variable" sid="4100000000261327" type="System">
+                    <param id="0" name="Variable">page_gameover</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4100000000269246" type="System">
+                    <param id="0" name="Variable">ArcadeAttemptExhausted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="17" name="Execute Javascript" sid="631625624414712" type="Browser">
-                    <param id="0" name="Javascript">&quot;window.parent.postMessage(&apos;goBack&apos;, &apos;*&apos;);&quot;</param>
+                <action id="0" name="Call function" sid="4100000000277165" type="Function">
+                    <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Pull the session best in from sessionStorage and from the Arcade config. Takes a max in both directions, so it is idempotent and can never lower the value - order of arrival does not matter.</comment>
+        <event-block sid="4100000000300922">
+            <conditions>
+                <condition id="0" name="On function" sid="4100000000308841" type="Function">
+                    <param id="0" name="Name">&quot;LoadHighScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4100000000285084" type="System">
+                    <param id="0" name="Variable">high_score</param>
+                    <param id="1" name="Value">max(high_score, int(Browser.ExecJS(&quot;(function(){try{return Number(sessionStorage.getItem(&apos;high_score&apos;))||0}catch(e){return 0}})()&quot;)))</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000293003" type="System">
+                    <param id="0" name="Variable">high_score</param>
+                    <param id="1" name="Value">max(high_score, ArcadeScoreToDisplay)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror high_score into sessionStorage. Wrapped in try/catch because storage can throw in a sandboxed iframe.</comment>
+        <event-block sid="4100000000324679">
+            <conditions>
+                <condition id="0" name="On function" sid="4100000000332598" type="Function">
+                    <param id="0" name="Name">&quot;SaveHighScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="17" name="Execute Javascript" sid="4100000000316760" type="Browser">
+                    <param id="0" name="Javascript">&quot;try{sessionStorage.setItem(&apos;high_score&apos;, String(&quot; &amp; high_score &amp; &quot;));}catch(e){}&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Play Again. Resets every run-scoped variable and object, then hands control back to the page state machine by setting page_gameplay last. high_score is deliberately NOT reset - it must survive retries. page_howtoplay stays 0 so the instructions are not shown again.</comment>
+        <event-block sid="4100000000554330">
+            <conditions>
+                <condition id="0" name="On function" sid="4100000000562249" type="Function">
+                    <param id="0" name="Name">&quot;RestartGame&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="4100000000340517" type="System">
+                    <param id="0" name="Variable">page_gameover</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000348436" type="System">
+                    <param id="0" name="Variable">page_howtoplay</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000356355" type="System">
+                    <param id="0" name="Variable">page_main</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000364274" type="System">
+                    <param id="0" name="Variable">page_settings</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000372193" type="System">
+                    <param id="0" name="Variable">page_characters</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000380112" type="System">
+                    <param id="0" name="Variable">page_continue</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000388031" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000395950" type="System">
+                    <param id="0" name="Variable">tapcounter</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000403869" type="System">
+                    <param id="0" name="Variable">speedCircle</param>
+                    <param id="1" name="Value">30</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000411788" type="System">
+                    <param id="0" name="Variable">speedCircle2</param>
+                    <param id="1" name="Value">50</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000419707" type="System">
+                    <param id="0" name="Variable">speedCircle3</param>
+                    <param id="1" name="Value">70</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000427626" type="System">
+                    <param id="0" name="Variable">rotation</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000435545" type="System">
+                    <param id="0" name="Variable">rotation2</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000443464" type="System">
+                    <param id="0" name="Variable">rotation3</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000451383" type="circle">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000459302" type="circle2">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000467221" type="circle3">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000475140" type="circleP">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000483059" type="circleP2">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="4100000000490978" type="circleP3">
+                    <param id="0" name="Angle">0</param>
+                </action>
+                <action id="0" name="Set text" sid="4100000000498897" type="score_main">
+                    <param id="0" name="Text">0</param>
+                </action>
+                <action id="0" name="Set text" sid="4100000000506816" type="final_score">
+                    <param id="0" name="Text">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="4100000000514735" type="shad" />
+                <action id="-9" name="Destroy" sid="4100000000522654" type="hvost" />
+                <action id="4" name="Play Game" sid="4100000000530573" type="Arcade">
+                    <param id="0" name="optionsJson">&quot;&quot;</param>
+                </action>
+                <action id="2" name="Submit Analytics" sid="4100000000538492" type="Arcade">
+                    <param id="0" name="eventName">&quot;play_game&quot;</param>
+                    <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;source&quot;&quot;:&quot;&quot;Retry&quot;&quot;}&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="4100000000546411" type="System">
+                    <param id="0" name="Variable">page_gameplay</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Bounded poll: Get Game Config is asynchronous, so ArcadeScoreToDisplay may land after start of layout. Re-syncs for ~3s then stops. LoadHighScore is also called at game over, so a slower config is still picked up.</comment>
+        <event-block sid="4100000000570168">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4100000000578087" type="System">
+                    <param id="0" name="Variable">hs_poll</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">12</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="4100000000586006" type="System">
+                    <param id="0" name="Interval (seconds)">0.25</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4100000000593925" type="System">
+                    <param id="0" name="Variable">hs_poll</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="4100000000601844" type="Function">
+                    <param id="0" name="Name">&quot;LoadHighScore&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="4100000000609763" type="Function">
+                    <param id="0" name="Name">&quot;SaveHighScore&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Attempts spent: dim Play Again. The tap handler also checks ArcadeAttemptExhausted, so the button is inert as well as dimmed.</comment>
+        <event-block sid="4100000000617682">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4100000000625601" type="System">
+                    <param id="0" name="Variable">ArcadeAttemptExhausted</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="4100000000633520" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4100000000641439" type="play_again_button">
+                    <param id="0" name="Opacity">40</param>
                 </action>
             </actions>
         </event-block>

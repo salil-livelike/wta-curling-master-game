@@ -1855,6 +1855,10 @@
             </behaviors>
             <texture original-source="C:\Users\salil\Downloads\sprite-font-kippax-1771337856258.png" />
         </object-type>
+        <object-type name="msg_gameover" sid="4100000000007919">
+            <plugin id="Spritefont2" />
+            <texture />
+        </object-type>
         <object-type name="score_main" sid="647525915817727">
             <plugin id="Spritefont2" />
             <behaviors>
