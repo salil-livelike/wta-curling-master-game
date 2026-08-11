@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_main</name>
+    <events>
+        <variable constant="0" name="page_main" sid="8859910993669605" static="0" type="number">1</variable>
+        <event-group description="" sid="3313381107956012" title="MAIN PAGE">
+            <sub-events>
+                <event-block sid="781582423871343">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="5695107943245115">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9425578098973372" type="System">
+                    <param id="0" name="Variable">page_main</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7602416400181931">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4927128539971641" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="229366808568096" type="System">
+                            <param id="0" name="Variable">page_gameover</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7511644422416766" type="System">
+                            <param id="0" name="Variable">page_gameplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8072798485490299" type="System">
+                            <param id="0" name="Variable">page_howtoplay</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="5429756807366974" type="System">
+                            <param id="0" name="Layer">&quot;main&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="1002187145930056" type="Function">
+                            <param id="0" name="Name">&quot;new&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="895640543277475" type="System">
+                            <param id="0" name="Variable">page_gameplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="838931902063670">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="3953739631289994">
+            <conditions>
+                <condition id="-22" name="Else" sid="5078240796100982" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block disabled="1" sid="809641569055023">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="2171953963996181" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="3780208559411065" type="System">
+                            <param id="0" name="Layer">&quot;main&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_langs</name>
+    <events>
+        <comment>LANGUES</comment>
+        <variable comment=" " constant="0" name="lang_score_text" sid="1701138117452913" static="0" type="text">Score</variable>
+        <variable comment=" " constant="0" name="lang_bestscore_text" sid="765018770418925" static="0" type="text">High Score</variable>
+        <variable comment=" " constant="0" name="lang_continue_text" sid="7014127068821469" static="0" type="text">Continue?</variable>
+        <variable comment=" " constant="0" name="lang_taptocontinue_text" sid="8424836402889196" static="0" type="text">Tap To Continue</variable>
+        <variable comment=" " constant="0" name="lang_gameover_text" sid="2796803070843573" static="0" type="text">Game Over</variable>
+        <variable comment=" " constant="0" name="lang_howtoplay_text" sid="1931609172045535" static="0" type="text">How To Play</variable>
+        <variable comment=" " constant="0" name="lang_settings_text" sid="9423860413012531" static="0" type="text">Settings</variable>
+        <variable comment=" " constant="0" name="lang_characters_text" sid="5219303409422291" static="0" type="text">Characters</variable>
+        <variable comment=" " constant="0" name="lang_unlockall_text" sid="9139122918213828" static="0" type="text">Unlock All</variable>
+        <variable comment=" " constant="0" name="lang_ratetitle_text" sid="6623291831247808" static="0" type="text">Like This Game?</variable>
+        <variable comment=" " constant="0" name="lang_ratetext_text" sid="5548644267527576" static="0" type="text">Please Rate it in the store!</variable>
+        <variable comment=" " constant="0" name="lang_btnRate_text" sid="5243976046555855" static="0" type="text">Yes, rate it!</variable>
+        <variable comment=" " constant="0" name="lang_btnRateLater_text" sid="1674524091675081" static="0" type="text">Remind me later</variable>
+        <event-block disabled="1" sid="1359621024700181">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4301841474231349" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Add from JSON string." sid="5522205207039992" type="Translation">
+                    <param id="0" name="JSON">&quot;{&#x0D;&#x0A;&quot;&quot;en&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Score&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Best&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Continue?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Tap To Continue&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Game Over&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;How To Play&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Settings&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Choose Characters&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Unlock All&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Like This Game?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Please Rate it in the store!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Yes, rate it!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Remind me later&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;ru&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Результат&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Лучший&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Продолжить&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Играть дальше&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Игра Закончена&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Как Играть&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Настройки&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Выбор героя&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Разблокировать Всех&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Вам нравится эта игра?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Пожалуйста, оцените ее в магазине!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Да, оценить сейчас!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Напомнить позже&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;uk&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Результат&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Кращий&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Продовжити&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Грати далі&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Гра Завершена&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Як Грати&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Налаштування&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Вибір персонажа&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Розблокувати Всіх&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Вам подобаеться ця гра?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Будь-ласка, оцініть її в магазині!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Так, оцінити зараз!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Нагадати пізніше&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;ja&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;結果&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;最良の結果&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;進みます&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;続けるにはクリックして&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;ゲームオーバー&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;遊び方&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;設定&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;英雄の選択&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;すべてのロックを解除&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;ゲームを好きですか？&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;店でそれを評価してください！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;はい、今評価します！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;私に後で通知します&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;ko&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;결과&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;최고의 결과&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;진행&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;계속 클릭&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;게임을 통해&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;게임 방법&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;설정&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;영웅을 선택&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;모든 잠금을 해제&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;당신은이 게임을 좋아하나요?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;가게에서 그것을 평가하십시오!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;예, 지금 평가하기!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;나중에 알림&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;zh-Hans&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;结果&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;最好&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;继续&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;点击继续&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;游戏结束&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;如何玩&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;设置&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;选择英雄&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;解锁所有&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;你喜欢这个游戏？&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;请在商店评分！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;是的，现在评估！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;稍后提醒我&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;de&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Ergebnis&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Bestes&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Vorgehen&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Bespielen&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Spiel vorbei&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Wie man spielt&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Einstellungen&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Die Auswahl des Helden&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Schalte alle&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Haben Sie das Spiel?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Bitte bewerten Sie es im Laden!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Ja, jetzt bewerten!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Später erinnern&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;fr&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Résultat&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Meilleur&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Procéder&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Jouer sur&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Jeu plus&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Comment jouer&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Réglages&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Sélection du héros&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Déverrouiller tous&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Avez-vous aimé ce jeu?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;S&apos;il vous plaît noter au magasin!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Oui, pour évaluer maintenant!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Rappelez-moi plus tard&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;zh-Hant&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;結果&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;最好&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;繼續&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;上播放&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;遊戲結束&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;如何玩&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;設置&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;選擇英雄&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;解鎖所有&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;你喜歡這個遊戲？&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;請在商店評分！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;是的，現在評估！&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;稍後提醒我&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;es&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Resultado&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Mejor&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Proceder&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Juega en&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Juego encima&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Cómo jugar&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Ajustes&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Selección del héroe&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Desbloquear todos&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Le gusta este juego?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Por favor calificar en la tienda!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Sí, para evaluar ahora!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Recordar más tarde&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;pt-BR&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Resultado&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Mais&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Prosseguir&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Jogar em&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Game Over&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Como Jogar&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Configurações&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Selecionando o herói&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Destravar todos&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Você gosta deste jogo?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Por favor, classifique-lo na loja!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Sim, para avaliar agora!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Lembre-me mais tarde&quot;&quot;&#x0D;&#x0A;  }, &#x0D;&#x0A; &quot;&quot;it&quot;&quot;:{&#x0D;&#x0A;&#x09;&quot;&quot;lang_score_text&quot;&quot;:&quot;&quot;Risultato&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_bestscore_text&quot;&quot;:&quot;&quot;Miglior&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_continue_text&quot;&quot;:&quot;&quot;Procedere&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_taptocontinue_text&quot;&quot;:&quot;&quot;Giocare su&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_gameover_text&quot;&quot;:&quot;&quot;Game Over&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_howtoplay_text&quot;&quot;:&quot;&quot;Come giocare&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_settings_text&quot;&quot;:&quot;&quot;Impostazioni&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_characters_text&quot;&quot;:&quot;&quot;Selezionando l&apos;eroe&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_unlockall_text&quot;&quot;:&quot;&quot;Sblocca tutti&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetitle_text&quot;&quot;:&quot;&quot;Ti piace questo gioco?&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_ratetext_text&quot;&quot;:&quot;&quot;Si prega di tasso al negozio!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRate_text&quot;&quot;:&quot;&quot;Sì, per valutare ora!&quot;&quot;,&#x0D;&#x0A;&#x09;&quot;&quot;lang_btnRateLater_text&quot;&quot;:&quot;&quot;Ricorda in seguito&quot;&quot;&#x0D;&#x0A;  }&#x0D;&#x0A;}&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="9991823585994167">
+                    <conditions>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="7092312061468782" type="Translation">
+                            <param id="0" name="Language">&quot;en&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="5195367829853683" type="Translation">
+                            <param id="0" name="Language">&quot;ru&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="8459428080176758" type="Translation">
+                            <param id="0" name="Language">&quot;ja&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="8776917569238272" type="Translation">
+                            <param id="0" name="Language">&quot;ko&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="1472202329499058" type="Translation">
+                            <param id="0" name="Language">&quot;zh-Hans&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="1852952758544598" type="Translation">
+                            <param id="0" name="Language">&quot;de&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="3880325120207385" type="Translation">
+                            <param id="0" name="Language">&quot;fr&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="7725990520082388" type="Translation">
+                            <param id="0" name="Language">&quot;zh-Hant&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="3805286759187688" type="Translation">
+                            <param id="0" name="Language">&quot;es&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="6193570341552357" type="Translation">
+                            <param id="0" name="Language">&quot;pt-BR&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="5108034577574899" type="Translation">
+                            <param id="0" name="Language">&quot;it&quot;</param>
+                        </condition>
+                        <condition disabled="1" id="1" inverted="1" name="Language is" sid="9376880741748561" type="Translation">
+                            <param id="0" name="Language">&quot;uk&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Change language" sid="5919737146250694" type="Translation">
+                            <param id="0" name="Language">&quot;en&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="7279539767509375">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5590121099829743" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="974342211930032" type="System">
+                            <param id="0" name="Variable">lang_score_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_score_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5438994520577378" type="System">
+                            <param id="0" name="Variable">lang_bestscore_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_bestscore_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="802267384656388" type="System">
+                            <param id="0" name="Variable">lang_continue_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_continue_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1105227032604789" type="System">
+                            <param id="0" name="Variable">lang_taptocontinue_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_taptocontinue_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5022312154865031" type="System">
+                            <param id="0" name="Variable">lang_gameover_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_gameover_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5268034938878521" type="System">
+                            <param id="0" name="Variable">lang_howtoplay_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_howtoplay_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2050225850166934" type="System">
+                            <param id="0" name="Variable">lang_settings_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_settings_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9070461349362426" type="System">
+                            <param id="0" name="Variable">lang_characters_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_characters_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8851357312657115" type="System">
+                            <param id="0" name="Variable">lang_unlockall_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_unlockall_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="296393997745014" type="System">
+                            <param id="0" name="Variable">lang_ratetitle_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_ratetitle_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8767456276991915" type="System">
+                            <param id="0" name="Variable">lang_ratetext_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_ratetext_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6844888925797801" type="System">
+                            <param id="0" name="Variable">lang_btnRate_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_btnRate_text&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6522184226520676" type="System">
+                            <param id="0" name="Variable">lang_btnRateLater_text</param>
+                            <param id="1" name="Value">Translation.Text(&quot;lang_btnRateLater_text&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>ja - японский</comment>
+        <comment>en - английский</comment>
+        <comment>ko - корейский</comment>
+        <comment>zh-Hans - китайский упрощенный</comment>
+        <comment>de - немецкий</comment>
+        <comment>fr - французский</comment>
+        <comment>zh-Hant - китайский традиционный</comment>
+        <comment>ru - русский</comment>
+        <comment>es - испанский</comment>
+        <comment>pt-BR - бразильский португальский</comment>
+        <comment>it - италиский</comment>
+        <comment>uk - українська</comment>
+    </events>
+</c2eventsheet>

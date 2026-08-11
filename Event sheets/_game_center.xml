@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_game_center</name>
+    <events>
+        <event-group description="" sid="4206650753700753" title="Game Center">
+            <sub-events>
+                <comment>GAME CENTER</comment>
+                <event-block sid="5607665397020958">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4225676154178782" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="597981283358049">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="6169601609880011" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Load Game Center &amp; Archievement IOS</comment>
+                                <event-block disabled="1" sid="6069164053348064">
+                                    <conditions>
+                                        <condition id="-32" name="Is on platform" sid="7931626924107901" type="System">
+                                            <param id="0" name="Platform">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="3424742698716192" type="System">
+                                            <param id="0" name="Variable">LEADERBOARD_ID</param>
+                                            <param id="1" name="Value">gamecenter_leaderboard_ios_ID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Load Game Center &amp; Archievement ANDROID</comment>
+                                <event-block disabled="1" sid="1700482462045334">
+                                    <conditions>
+                                        <condition id="-32" name="Is on platform" sid="7907821790966887" type="System">
+                                            <param id="0" name="Platform">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="9505099807387408" type="System">
+                                            <param id="0" name="Variable">LEADERBOARD_ID</param>
+                                            <param id="1" name="Value">gamecenter_leaderboard_android_ID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2060168371635149" title="Score Best Updare" />
+        <comment>Update score and coins counters</comment>
+        <event-block sid="1380958743615166">
+            <conditions>
+                <condition id="0" name="On function" sid="6753616084882" type="Function">
+                    <param id="0" name="Name">&quot;coins&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="623515777542887">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="3804614778368443" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6225045110025144" type="System">
+                            <param id="0" name="Variable">coins</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="9310507530053894" type="WebStorage">
+                            <param id="0" name="Key">&quot;coins_go_to_dot&quot;</param>
+                            <param id="1" name="Value">coins</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="106854908578444">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="499185428455110" type="SpriteFont">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;text_coins&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="522306003838710" type="SpriteFont">
+                                    <param id="0" name="Text">coins</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Substract score and coins counters</comment>
+        <event-block sid="8403192698816825">
+            <conditions>
+                <condition id="0" name="On function" sid="7684541885712367" type="Function">
+                    <param id="0" name="Name">&quot;coins_substract&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5710581556569164">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4460518617626643" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="5763468458059151" type="System">
+                            <param id="0" name="Variable">coins</param>
+                            <param id="1" name="Value">coins_unlock</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="414204165081525" type="WebStorage">
+                            <param id="0" name="Key">&quot;coins_go_to_dot&quot;</param>
+                            <param id="1" name="Value">coins</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="765935149529273">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="998931885217717" type="SpriteFont">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;text_coins&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="573680573780104" type="SpriteFont">
+                                    <param id="0" name="Text">coins</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2233529947388228">
+            <conditions>
+                <condition id="0" name="On function" sid="4835732650560966" type="Function">
+                    <param id="0" name="Name">&quot;score&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="160312406375791">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="676057857388127" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="3317780448563555" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="378911624854960" type="game_live_score">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="482120212773460" type="score_main">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="542322051356376" type="final_score">
+                            <param id="0" name="Text">score</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="391672787127586">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="327118466885083" type="SpriteFont">
+                                    <param id="0" name="Instance variable">class</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;text_score&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="310899601695937" type="SpriteFont">
+                                    <param id="0" name="Text">score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7117942870542393">
+            <conditions>
+                <condition id="0" name="On function" sid="7005492994448674" type="Function">
+                    <param id="0" name="Name">&quot;score_best&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2008684704791243">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="2468529236904194" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3543098253647192">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6652169662085723" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">score_best</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="406755217162707" type="System">
+                                    <param id="0" name="Variable">score_best</param>
+                                    <param id="1" name="Value">score</param>
+                                </action>
+                                <action id="0" name="Set local value" sid="1558992439914886" type="WebStorage">
+                                    <param id="0" name="Key">&quot;score_best_go_to_dot&quot;</param>
+                                    <param id="1" name="Value">score_best</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="666264099318147">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="832722409074783" type="SpriteFont">
+                                            <param id="0" name="Instance variable">class</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;text_bestscore&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="810009270404001" type="SpriteFont">
+                                            <param id="0" name="Text">lang_bestscore_text&amp;&quot;: &quot;&amp;score_best</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="14" name="Stop" sid="366239126490419" type="SpriteFont">
+                                            <param id="0" name="Stop Mode">2</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="10" name="Start" sid="323771585057316" type="SpriteFont" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="376639172022994">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8383286718597478" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="442010910377034">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="742389199503374" type="SpriteFont">
+                                            <param id="0" name="Instance variable">class</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;text_bestscore&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="785798169772421" type="SpriteFont">
+                                            <param id="0" name="Text">lang_bestscore_text&amp;&quot;: &quot;&amp;score_best</param>
+                                        </action>
+                                        <action behavior="EaseTween" id="14" name="Stop" sid="983772093246909" type="SpriteFont">
+                                            <param id="0" name="Stop Mode">2</param>
+                                        </action>
+                                        <action id="-16" name="Set opacity" sid="350920888769927" type="SpriteFont">
+                                            <param id="0" name="Opacity">100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

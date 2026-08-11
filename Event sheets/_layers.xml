@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_layers</name>
+    <events>
+        <comment>Layer start/end effect</comment>
+        <event-block sid="8832334885397331">
+            <conditions>
+                <condition id="0" name="On function" sid="3564789569760659" type="Function">
+                    <param id="0" name="Name">&quot;layerFade&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7106372398095317">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="8680390845209319" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="shadow_animation" id="1" name="Set duration" sid="7300902203551886" type="shadow">
+                            <param id="0" name="Duration">shadow_duration_time</param>
+                        </action>
+                        <action behavior="shadow_animation" id="14" name="Stop" sid="2376908504728289" type="shadow">
+                            <param id="0" name="Stop Mode">2</param>
+                        </action>
+                        <action behavior="shadow_animation" id="10" name="Start" sid="4199647681624083" type="shadow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Sound On/Off</comment>
+        <event-block sid="4253482111196628">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="5022242816060214" type="button">
+                    <param id="0" name="Instance variable">sound</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="1599627764874036" type="button">
+                    <param id="0" name="Unique ID">68</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1108109336406991">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="574904473919629" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="2296922528400261" type="WebStorage">
+                            <param id="0" name="Key">&quot;sound&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="5044178940077877" type="Audio">
+                            <param id="0" name="Audio file">music</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5836098059843649">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="4544696097536127" type="button">
+                                    <param id="0" name="Unique ID">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="6636314387386155" type="button">
+                                    <param id="0" name="Frame number">16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5047753445647943">
+            <conditions>
+                <condition id="-22" name="Else" sid="121298514175473" type="System" />
+                <condition id="-14" name="Pick by unique ID" sid="4276024061596676" type="button">
+                    <param id="0" name="Unique ID">68</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9225321148380442">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5582478506374088" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="7211341646853268" type="WebStorage">
+                            <param id="0" name="Key">&quot;sound&quot;</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="2645690604960435" type="Audio">
+                            <param id="0" name="Tag">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6854861103240168">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="1360609170076547" type="button">
+                                    <param id="0" name="Unique ID">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="3717241722117925" type="button">
+                                    <param id="0" name="Frame number">17</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

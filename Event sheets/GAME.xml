@@ -1,0 +1,1682 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GAME</name>
+    <events>
+        <variable constant="0" name="almaz" sid="637050885357704" static="0" type="number">0</variable>
+        <variable constant="0" name="speedCircle" sid="760576970309137" static="0" type="number">30</variable>
+        <variable constant="0" name="speedCircle2" sid="482973721450142" static="0" type="number">50</variable>
+        <variable constant="0" name="speedCircle3" sid="417317489922333" static="0" type="number">70</variable>
+        <variable constant="0" name="rotation" sid="124564588133224" static="0" type="number">1</variable>
+        <variable constant="0" name="rotation2" sid="354747337924641" static="0" type="number">1</variable>
+        <variable constant="0" name="rotation3" sid="243959409550767" static="0" type="number">1</variable>
+        <variable comment="incrementer" constant="0" name="tapcounter" sid="856215410411797" static="0" type="number">0</variable>
+        <comment>Game Play</comment>
+        <comment>Game Over</comment>
+        <comment>Game Add Coin</comment>
+        <comment>Game Add Score</comment>
+        <event-block sid="839861804033658">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="191932190768763" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="905147254340706" type="player">
+                    <param id="0" name="Instance variable">step</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="275793144803042" type="player">
+                    <param id="0" name="Instance variable">move</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="445628453524455" type="shad" />
+                <action id="3" name="Get Game Config" sid="239563612261050" type="Arcade">
+                    <param id="0" name="refetch">0</param>
+                </action>
+                <action id="4" name="Play Game" sid="922824509834000" type="Arcade">
+                    <param id="0" name="optionsJson">&quot;&quot;</param>
+                </action>
+                <action id="2" name="Submit Analytics" sid="182948913519475" type="Arcade">
+                    <param id="0" name="eventName">&quot;visit_game&quot;</param>
+                    <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;source&quot;&quot;:&quot;&quot;Welcome Screen&quot;&quot;}&quot;</param>
+                </action>
+                <action id="2" name="Submit Analytics" sid="798413688064425" type="Arcade">
+                    <param id="0" name="eventName">&quot;play_game&quot;</param>
+                    <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;}&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="189014260132923" type="score_main">
+                    <param id="0" name="Text">0</param>
+                </action>
+                <action id="0" name="Set text" sid="451130341575996" type="final_score">
+                    <param id="0" name="Text">0</param>
+                </action>
+                <action id="17" name="Execute Javascript" sid="624052069740966" type="Browser">
+                    <param id="0" name="Javascript">&quot;window.parent.postMessage(&apos;gameLoaded&apos;, &apos;*&apos;);&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Circle 1</comment>
+                <event-block sid="590758199573255">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="818236959353890" type="dot2">
+                            <param id="0" name="Unique ID">82</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="347598635457699" type="dot2">
+                            <param id="0" name="Pin to">circle</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="580843213957090">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="229081728762197" type="dot2">
+                            <param id="0" name="Unique ID">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="604362457000663" type="dot2">
+                            <param id="0" name="Pin to">circle</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="515386881731908">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="388205240224217" type="dot2">
+                            <param id="0" name="Unique ID">84</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="757763646460946" type="dot2">
+                            <param id="0" name="Pin to">circle</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="643932106016682">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="248505533334791" type="dot2">
+                            <param id="0" name="Unique ID">99</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="630194711140107" type="dot2">
+                            <param id="0" name="Pin to">circle</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Circle 2</comment>
+                <event-block sid="255656877929431">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="189766986596430" type="dot2">
+                            <param id="0" name="Unique ID">89</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="909386595983430" type="dot2">
+                            <param id="0" name="Pin to">circle2</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="365080547076454">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="166712912559362" type="dot2">
+                            <param id="0" name="Unique ID">85</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="620068560322975" type="dot2">
+                            <param id="0" name="Pin to">circle2</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="329408865089206">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="138448897897503" type="dot2">
+                            <param id="0" name="Unique ID">90</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="394809015055376" type="dot2">
+                            <param id="0" name="Pin to">circle2</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Circle 3</comment>
+                <event-block sid="499710100196457">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="832042579587331" type="dot2">
+                            <param id="0" name="Unique ID">98</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="340655537261385" type="dot2">
+                            <param id="0" name="Pin to">circle3</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="725167032669076">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="440946899285817" type="dot2">
+                            <param id="0" name="Unique ID">97</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="947829025718797" type="dot2">
+                            <param id="0" name="Pin to">circle3</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="301478950115154">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="766587865820567" type="dot2">
+                            <param id="0" name="Unique ID">95</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="992535415291686" type="dot2">
+                            <param id="0" name="Pin to">circle3</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="334436164865742">
+            <conditions>
+                <condition id="0" name="On function" sid="228676877453957" type="Function">
+                    <param id="0" name="Name">&quot;chooseBG&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="281234752066631">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="436796807167434" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="657002661946272" type="System">
+                            <param id="0" name="Variable">styleBG</param>
+                            <param id="1" name="Value">choose(93,95,97,98,99,100,101,102,103,104,105,106,107,108,110)</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="860483537255945" type="WebStorage">
+                            <param id="0" name="Key">&quot;styleBG&quot;</param>
+                            <param id="1" name="Value">styleBG</param>
+                        </action>
+                        <action id="0" name="Call function" sid="773656854716166" type="Function">
+                            <param id="0" name="Name">&quot;loadStyleBG&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6022195936193188">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7629645845984306" type="System">
+                    <param id="0" name="Variable">page_gameplay</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="971612539438954">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="255633811113342" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="778346387684265" type="System">
+                            <param id="0" name="Object to create">player</param>
+                            <param id="1" name="Layer">&quot;gameplay&quot;</param>
+                            <param id="2" name="X">320</param>
+                            <param id="3" name="Y">920</param>
+                        </action>
+                        <action id="0" name="Call function" sid="411095790287486" type="Function">
+                            <param id="0" name="Name">&quot;chooseBG&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="533199944856725" type="almaz" />
+                    </actions>
+                    <sub-events>
+                        <comment>Characters Load Active</comment>
+                        <event-block sid="748114502737749">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="291417664348806" type="WebStorage">
+                                    <param id="0" name="Key">&quot;character_active&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="488341767423253" type="characters">
+                                    <param id="0" name="Instance variable">active</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="670373068182264">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="177144353443861" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="186230466765389">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="370463362131965" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="688069791092413" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="500877301689615" type="player">
+                                                    <param id="0" name="Animation">&quot;a1&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="144785428549014">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="238286985939462" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="222479176354871">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="196068914233308" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="971297541517154" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="609752172049496" type="player">
+                                                    <param id="0" name="Animation">&quot;a2&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="872372567162705">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="782885423255121" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="157568886877537">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="254302498079935" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="831741089377627" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="151410771622444" type="player">
+                                                    <param id="0" name="Animation">&quot;a3&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="424410991579003">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="855805653276544" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="434925589946064">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="649178311131569" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="958703001439203" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="650551016064738" type="player">
+                                                    <param id="0" name="Animation">&quot;a4&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="430241863181238">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="754241252420855" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="280857301567174">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="963350563113208" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="434777639380218" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="379674294642745" type="player">
+                                                    <param id="0" name="Animation">&quot;a5&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="706322321458917">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="237759387159809" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="119342160241751">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="181428598778316" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="501730078199704" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="854452225567757" type="player">
+                                                    <param id="0" name="Animation">&quot;a6&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="171471501242953">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="431623440667813" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="538183468944697">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="324130832515925" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="867675717332973" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="603099083698153" type="player">
+                                                    <param id="0" name="Animation">&quot;a7&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="390672154043616">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="146514983963068" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="365780359037480">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="924675016341679" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="104300199130572" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="660778858962571" type="player">
+                                                    <param id="0" name="Animation">&quot;a8&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="174370052109135">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="311882298349620" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">9</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="933735092103832">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="688363437415675" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">9</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="113288711427455" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="452806828996748" type="player">
+                                                    <param id="0" name="Animation">&quot;a9&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="282503880114761">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="205005957011932" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">10</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="129280157482714">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="736042340459580" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="631012345894278" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="931482911498987" type="player">
+                                                    <param id="0" name="Animation">&quot;a10&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="317627669802527">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="741377160904782" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">11</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="228554923898925">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="346344347339200" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">11</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="969316195201407" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="490600847548385" type="player">
+                                                    <param id="0" name="Animation">&quot;a11&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="215014943061653">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="360631795971088" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">12</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="800508682688952">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="197437329983151" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">12</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="940316343026661" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="761901289549808" type="player">
+                                                    <param id="0" name="Animation">&quot;a12&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="242257686753182">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="727610035574163" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="296313799959815">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="236257492345897" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="137456974426163" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="858668472537811" type="player">
+                                                    <param id="0" name="Animation">&quot;a13&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="899407100398168">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="982762133586105" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">14</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="501628878634566">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="169097685036875" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">14</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="857511543221505" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="712962411686214" type="player">
+                                                    <param id="0" name="Animation">&quot;a14&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="193319260343342">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="749412034706418" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="640759001840175">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="441189043576978" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">15</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="359454258689199" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="183177508047284" type="player">
+                                                    <param id="0" name="Animation">&quot;a15&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="902072516866520">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="888525763998216" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="393473508958151">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="306587315702137" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">16</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="495849617844293" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="700306021479047" type="player">
+                                                    <param id="0" name="Animation">&quot;a16&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="124998361263645">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="958837233409571" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">17</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="942167785477642">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="523856742546012" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">17</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="152746399140044" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="905816239333579" type="player">
+                                                    <param id="0" name="Animation">&quot;a17&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="377517190933067">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="578739937162249" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">18</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="498359871154769">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="469170604181280" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">18</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="392391124332331" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="997330063616488" type="player">
+                                                    <param id="0" name="Animation">&quot;a18&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="443531251595211">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="121177459014629" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">19</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="704738083589166">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="978844925693896" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">19</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="824926282147242" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="630829558907127" type="player">
+                                                    <param id="0" name="Animation">&quot;a19&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="718643038932363">
+                                    <conditions>
+                                        <condition id="7" name="Compare key value (as number)" sid="448873063823060" type="WebStorage">
+                                            <param id="0" name="Key">&quot;character_active&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="291708763232837">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="183541117211091" type="characters">
+                                                    <param id="0" name="Instance variable">character</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">20</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-13" name="Set boolean" sid="603182638063370" type="characters">
+                                                    <param id="0" name="Instance variable">active</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="301979484942900" type="player">
+                                                    <param id="0" name="Animation">&quot;a20&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="109875322797234">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="178705904563997" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="933034389083506" type="System">
+                            <param id="0" name="Seconds">0.15</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="627515731801050" type="player">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="137548735270146" type="System">
+                            <param id="0" name="Variable">speedCircle</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="662788750568607" type="System">
+                            <param id="0" name="Variable">speedCircle2</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="361385120608148" type="System">
+                            <param id="0" name="Variable">speedCircle3</param>
+                            <param id="1" name="Value">70</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="744617965888361">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="489413310174655" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="758020305672612" type="circle">
+                            <param id="0" name="Angle">Self.Angle+(speedCircle*dt)*rotation</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="295771432118253" type="circle2">
+                            <param id="0" name="Angle">Self.Angle-(speedCircle2*dt)*rotation2</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="277625628535284" type="circle3">
+                            <param id="0" name="Angle">Self.Angle+(speedCircle3*dt)*rotation3</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="171720085349802" type="circleP">
+                            <param id="0" name="Angle">Self.Angle+((speedCircle-10)*dt)*rotation</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="948239636523843" type="circleP2">
+                            <param id="0" name="Angle">Self.Angle-((speedCircle2-10)*dt)*rotation2</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="274024514541172" type="circleP3">
+                            <param id="0" name="Angle">Self.Angle+((speedCircle3-10)*dt)*rotation3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="713038487213831">
+                    <conditions>
+                        <condition id="2" name="Is in touch" sid="666997337883829" type="Touch" />
+                        <condition id="-9" name="Layer is visible" sid="658217516466955" type="System">
+                            <param id="0" name="Layer">&quot;gameplay&quot;</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="407998541746092" type="Touch">
+                            <param id="0" name="Object">sound_button</param>
+                        </condition>
+                        <condition disabled="1" id="4" inverted="1" name="Is touching object" sid="136530856010573" type="Touch">
+                            <param id="0" name="Object">button</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="150123943810113">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="430398241707929" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="1" name="Unpin" sid="247291195508035" type="player" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="448266502191295">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="725604515215044" type="player">
+                                            <param id="0" name="Instance variable">move</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="580052179393385" type="System">
+                                            <param id="0" name="Variable">tapcounter</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="2" name="Submit Analytics" sid="189599431301650" type="Arcade">
+                                            <param id="0" name="eventName">&quot;game_prop&quot;</param>
+                                            <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; score &amp; &quot;&quot;&quot;,&quot;&quot;lives_left&quot;&quot;:&quot;&quot;&quot; &amp; -1 &amp; &quot;&quot;&quot;,&quot;&quot;tap_counter&quot;&quot;:&quot;&quot;&quot; &amp; tapcounter &amp; &quot;&quot;&quot;}&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="734125394050953">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="580865175435441" type="button">
+                                                    <param id="0" name="Instance variable">sound</param>
+                                                </condition>
+                                                <condition id="-14" name="Pick by unique ID" sid="471381949724327" type="button">
+                                                    <param id="0" name="Unique ID">68</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="719284842335358" type="Audio">
+                                                    <param id="0" name="Audio file">touch</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;touch&quot;</param>
+                                                </action>
+                                                <action id="5" name="Set playback rate" sid="795633026061367" type="Audio">
+                                                    <param id="0" name="Tag">&quot;touch&quot;</param>
+                                                    <param id="1" name="Playback rate">1.5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="512289056714628">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="850792153875587" type="player">
+                                                    <param id="0" name="Instance variable">step</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="966045988309527" type="player">
+                                                    <param id="0" name="X">dot.X-90</param>
+                                                    <param id="1" name="Y">dot.Y-90</param>
+                                                </action>
+                                                <action id="-29" name="Move to object" sid="864765461299900" type="player">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Object">dot</param>
+                                                </action>
+                                                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="627917610480752" type="player">
+                                                    <param id="0" name="Distance">distance(dot.X,dot.Y, player.X, player.Y)-circle.Width/2+30</param>
+                                                    <param id="1" name="Angle">angle(player.X, player.Y, dot.X, dot.Y)</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="318923901676408" type="player">
+                                                    <param id="0" name="Instance variable">move</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="247496750258574">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="271627914064143" type="player">
+                                                    <param id="0" name="Instance variable">step</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="105392120089106" type="player">
+                                                    <param id="0" name="X">dot.X-90</param>
+                                                    <param id="1" name="Y">dot.Y-90</param>
+                                                </action>
+                                                <action id="-29" name="Move to object" sid="913106320374654" type="player">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Object">dot</param>
+                                                </action>
+                                                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="746565397070456" type="player">
+                                                    <param id="0" name="Distance">(circle.Width-circle2.Width)/2</param>
+                                                    <param id="1" name="Angle">angle(player.X, player.Y, dot.X, dot.Y)</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="245228912226966" type="player">
+                                                    <param id="0" name="Instance variable">move</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="813809978351465">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="154033318475977" type="player">
+                                                    <param id="0" name="Instance variable">step</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="427218152998821" type="player">
+                                                    <param id="0" name="X">dot.X-90</param>
+                                                    <param id="1" name="Y">dot.Y-90</param>
+                                                </action>
+                                                <action id="-29" name="Move to object" sid="109074820209948" type="player">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Object">dot</param>
+                                                </action>
+                                                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="240568702494650" type="player">
+                                                    <param id="0" name="Distance">distance(player.X, player.Y, dot.X, dot.Y)-circle3.Width/2+5</param>
+                                                    <param id="1" name="Angle">angle(player.X, player.Y, dot.X, dot.Y)</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="132723115717607" type="player">
+                                                    <param id="0" name="Instance variable">move</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="744701999499480">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="596128399524076" type="player">
+                                                    <param id="0" name="Instance variable">step</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-22" name="Set angle toward position" sid="306835828194875" type="player">
+                                                    <param id="0" name="X">dot.X-90</param>
+                                                    <param id="1" name="Y">dot.Y-90</param>
+                                                </action>
+                                                <action id="-29" name="Move to object" sid="437530945915083" type="player">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Object">dot</param>
+                                                </action>
+                                                <action behavior="MoveTo" id="8" name="Move to distance-angle" sid="700236845217905" type="player">
+                                                    <param id="0" name="Distance">distance(player.X, player.Y, dot.X, dot.Y)</param>
+                                                    <param id="1" name="Angle">angle(player.X, player.Y, dot.X, dot.Y)</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="401338145339502" type="player">
+                                                    <param id="0" name="Instance variable">move</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <variable comment="incrementer" constant="0" name="tapcounter2" sid="711048156727422" static="0" type="number">0</variable>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="312017060282687">
+                    <conditions>
+                        <condition behavior="MoveTo" id="0" name="On hit target position" sid="596952486672863" type="player" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="545866257599723">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="615931369701740" type="button">
+                                    <param id="0" name="Instance variable">sound</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="663684190185885" type="button">
+                                    <param id="0" name="Unique ID">68</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="821326959150825" type="Audio">
+                                    <param id="0" name="Audio file">line</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;line&quot;</param>
+                                </action>
+                                <action disabled="1" id="5" name="Set playback rate" sid="335323150487581" type="Audio">
+                                    <param id="0" name="Tag">&quot;click&quot;</param>
+                                    <param id="1" name="Playback rate">1.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="449663004166094">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="449342724939540" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="180920373013460" type="System">
+                                    <param id="0" name="Seconds">0.05</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="747641338943030" type="player">
+                                    <param id="0" name="Pin to">circleP</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="347219203041340" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="711892757159964" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="209416065784534">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="416551341492284" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="143481516500062" type="System">
+                                    <param id="0" name="Seconds">0.05</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="906568127680984" type="player">
+                                    <param id="0" name="Pin to">circleP</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="808211680053426" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="693079038874746" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="307975353308766">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="918827233899548" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="374866544518144" type="System">
+                                    <param id="0" name="Seconds">0.05</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="868728238716323" type="player">
+                                    <param id="0" name="Pin to">circleP2</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="936565574138433" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="640958744906284" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="334632012620429">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="707851628615115" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="939189238520741" type="System">
+                                    <param id="0" name="Seconds">0.05</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="556112140737750" type="player">
+                                    <param id="0" name="Pin to">circleP3</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="299750872606393" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="201210429564500">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="875832298817206" type="player">
+                            <param id="0" name="Object">dot</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="134898774265489">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="199129053925104" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="987598129770051">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="937235733677036" type="System">
+                                            <param id="0" name="Variable">almaz</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="126108310936232" type="System">
+                                            <param id="0" name="Object to create">almaz</param>
+                                            <param id="1" name="Layer">&quot;gameplay&quot;</param>
+                                            <param id="2" name="X">320</param>
+                                            <param id="3" name="Y">780</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="217155226428492" type="System">
+                                            <param id="0" name="Variable">almaz</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="813686358714092">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="108966941086913" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="808475983811158" type="System">
+                                            <param id="0" name="Variable">almaz</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="572634152663433">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="295574987894346" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="800241349107373" type="Function">
+                                    <param id="0" name="Name">&quot;GameAddScore&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-3" name="Set position" sid="765062782071231" type="player">
+                                    <param id="0" name="X">320</param>
+                                    <param id="1" name="Y">920</param>
+                                </action>
+                                <action behavior="EaseTween" id="14" name="Stop" sid="724173541875591" type="dot">
+                                    <param id="0" name="Stop Mode">2</param>
+                                </action>
+                                <action behavior="EaseTween" id="10" name="Start" sid="151014967774854" type="dot" />
+                                <action id="-10" name="Set value" sid="525585652079985" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="767651664386201" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="MoveTo" id="9" name="Stop" sid="468300695455263" type="player" />
+                                <action id="-10" name="Add to" sid="927230267571055" type="System">
+                                    <param id="0" name="Variable">speedCircle</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="454241483227441" type="System">
+                                    <param id="0" name="Variable">speedCircle2</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="761919920195167" type="System">
+                                    <param id="0" name="Variable">speedCircle3</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="260815998744796" type="System">
+                                    <param id="0" name="Variable">rotation</param>
+                                    <param id="1" name="Value">choose(1,-1)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="875119426074841">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="312447933750832" type="button">
+                                            <param id="0" name="Instance variable">sound</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="411747763338186" type="button">
+                                            <param id="0" name="Unique ID">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="170500458126045" type="Audio">
+                                            <param id="0" name="Audio file">click</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;score&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set playback rate" sid="598677493509520" type="Audio">
+                                            <param id="0" name="Tag">&quot;score&quot;</param>
+                                            <param id="1" name="Playback rate">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="647272033667415">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="691909315688371" type="player">
+                            <param id="0" name="Object">almaz</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="248749724544261">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="352574413738941" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="288740563872277" type="Function">
+                                    <param id="0" name="Name">&quot;GameAddCoin&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action behavior="EaseTween2" id="10" name="Start" sid="177317177668490" type="almaz" />
+                                <action behavior="EaseTween3" id="10" name="Start" sid="157685020458190" type="almaz" />
+                                <action disabled="1" id="-10" name="Add to" sid="542108586048982" type="System">
+                                    <param id="0" name="Variable">score</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Call function" sid="514430982015325" type="Function">
+                                    <param id="0" name="Name">&quot;GameAddScore&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="164061251504131">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="295516696620828" type="button">
+                                            <param id="0" name="Instance variable">sound</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="135697622451512" type="button">
+                                            <param id="0" name="Unique ID">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="573597982383965" type="Audio">
+                                            <param id="0" name="Audio file">click</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set playback rate" sid="368877255599879" type="Audio">
+                                            <param id="0" name="Tag">&quot;coin&quot;</param>
+                                            <param id="1" name="Playback rate">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="894116524158577">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="659644559967378" type="player">
+                            <param id="0" name="Object">dot2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="705851421136502">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="181934725060755" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="250903436476124">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="309615328582999" type="button">
+                                            <param id="0" name="Instance variable">sound</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="573678172260482" type="button">
+                                            <param id="0" name="Unique ID">68</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="759674383451070" type="Audio">
+                                            <param id="0" name="Audio file">gameover</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;gameover&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="471457080549543">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="247255390691990" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="663001233255773" type="player">
+                                    <param id="0" name="Object">shad</param>
+                                    <param id="1" name="Layer">&quot;gameplay&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="682894080593526" type="System">
+                                    <param id="0" name="Variable">speedCircle</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="550777811403868" type="System">
+                                    <param id="0" name="Variable">speedCircle2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="739929602462554" type="System">
+                                    <param id="0" name="Variable">speedCircle3</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="442277901185430" type="player">
+                                    <param id="0" name="Instance variable">step</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="293902352187364" type="player" />
+                                <action id="-13" name="Set boolean" sid="695323319318510" type="player">
+                                    <param id="0" name="Instance variable">move</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="MoveTo" id="9" name="Stop" sid="267555310289615" type="player" />
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="511986910248457" type="shake">
+                                    <param id="0" name="Magnitude">20</param>
+                                    <param id="1" name="Duration">0.4</param>
+                                    <param id="2" name="Mode">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="879935359409278" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="108268928624634" type="System">
+                                    <param id="0" name="Group name">&quot;SubmitHighScore&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="0" name="Call function" sid="202656641391415" type="Function">
+                                    <param id="0" name="Name">&quot;GameOver&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="122701332242389">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="783638294536665" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="206822326066593">
+                            <conditions>
+                                <condition behavior="MoveTo" id="3" name="Is moving" sid="929451850825503" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="179838668446782" type="player">
+                                    <param id="0" name="Object">hvost</param>
+                                    <param id="1" name="Layer">&quot;gameplay&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="371856638823237" type="hvost">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">player</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="206831355098465" title="SubmitHighScore">
+            <sub-events>
+                <event-block sid="617447882136708">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="700347117919999" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="14" name="Log" sid="567162634373266" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;testing submit score&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable comment="HighScoreToDisplay" constant="0" name="ArcadeScoreToDisplay" sid="509255279976176" static="0" type="number">0</variable>
+        <variable comment="1 if attempts exhausted, 0 otherwise" constant="0" name="ArcadeAttemptExhausted" sid="802889009382385" static="0" type="number">0</variable>
+        <variable comment="Number of attempts remaining" constant="0" name="ArcadeAttempts" sid="128709307980711" static="0" type="number">0</variable>
+        <variable comment="1 if only high scores should be submitted, 0 otherwise" constant="0" name="ArcadeSubmitHighScoreOnly" sid="255505277895461" static="0" type="number">0</variable>
+        <variable comment="Player&apos;s previous high score" constant="0" name="ArcadeScore" sid="585766185260889" static="0" type="number">0</variable>
+        <event-group description="" sid="429083578055484" title="Gameover">
+            <sub-events>
+                <event-block sid="772598989637286">
+                    <conditions>
+                        <condition id="0" name="On function" sid="312326632129319" type="Function">
+                            <param id="0" name="Name">&quot;GameOver&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="423621743738769">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="245778994095113" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Submit Analytics" sid="794391296271142" type="Arcade">
+                                    <param id="0" name="eventName">&quot;submit_score&quot;</param>
+                                    <param id="1" name="eventData">&quot;{&quot;&quot;game_name&quot;&quot;:&quot;&quot;Ace It&quot;&quot;,&quot;&quot;score&quot;&quot;:&quot;&quot;&quot; &amp; score &amp; &quot;&quot;&quot;,&quot;&quot;tap_counter&quot;&quot;:&quot;&quot;&quot; &amp; tapcounter &amp; &quot;&quot;&quot;}&quot;</param>
+                                </action>
+                                <action id="5" name="Invoke Action" sid="535024688316402" type="Arcade">
+                                    <param id="0" name="actionName">&quot;submit_score&quot;</param>
+                                    <param id="1" name="optionsJson">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="TempNew" sid="257333942190369" static="0" type="number">0</variable>
+                                <event-block sid="236746358171581">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="288632464993354" type="System">
+                                            <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="501115139828954" type="System">
+                                            <param id="0" name="Variable">ArcadeScoreToDisplay</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">score</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action disabled="1" id="-9" name="Set value" sid="633786525780714" type="System">
+                                            <param id="0" name="Variable">score</param>
+                                            <param id="1" name="Value">(score)-ArcadeScoreToDisplay</param>
+                                        </action>
+                                        <action disabled="1" id="1" name="Submit Score" sid="196455040961978" type="Arcade">
+                                            <param id="0" name="score">(score)-ArcadeScoreToDisplay</param>
+                                            <param id="1" name="scoreToDisplay">score</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="176814057428915" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;ScoreFrom Trigger value&quot; &amp;score</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="555965020478529" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;ArcadeScoreToDisplay Trigger value&quot; &amp;ArcadeScoreToDisplay</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="373209695846448" type="System">
+                                            <param id="0" name="Variable">TempNew</param>
+                                            <param id="1" name="Value">score-ArcadeScoreToDisplay</param>
+                                        </action>
+                                        <action disabled="1" id="14" name="Log" sid="381730784554877" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Temp Trigger value&quot; &amp;TempNew</param>
+                                        </action>
+                                        <action id="1" name="Submit Score" sid="205940190020402" type="Arcade">
+                                            <param id="0" name="score">TempNew</param>
+                                            <param id="1" name="scoreToDisplay">score</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="652589382196741" type="System">
+                                            <param id="0" name="Variable">tapcounter</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="286981188817016">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="593477464296952" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="677998914647487">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="702681211807789" type="System">
+                                            <param id="0" name="Variable">ArcadeSubmitHighScoreOnly</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition disabled="1" id="-14" name="Compare variable" sid="926885566811477" type="System">
+                                            <param id="0" name="Variable">ArcadeScore</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">score</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Submit Score" sid="415213835163185" type="Arcade">
+                                            <param id="0" name="score">score</param>
+                                            <param id="1" name="scoreToDisplay">score</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="948494009803130" type="System">
+                                            <param id="0" name="Variable">tapcounter</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="108042818344385">
+            <conditions>
+                <condition id="17" name="On tap object" sid="265501043659012" type="Touch">
+                    <param id="0" name="Object">GameOverContinue</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="781076309883486" type="System">
+                    <param id="0" name="Layer">&quot;gameover&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="17" name="Execute Javascript" sid="631625624414712" type="Browser">
+                    <param id="0" name="Javascript">&quot;window.parent.postMessage(&apos;goBack&apos;, &apos;*&apos;);&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

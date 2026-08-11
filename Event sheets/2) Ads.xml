@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>2) Ads</name>
+    <events>
+        <variable constant="0" name="start_ads" sid="946657051275193" static="0" type="number">0</variable>
+        <event-group description="" disabled="1" sid="2314861344173509" title="AdsHeyzap">
+            <sub-events>
+                <comment>Banner Full Ads Show</comment>
+                <event-block disabled="1" sid="878088202459012">
+                    <conditions>
+                        <condition id="0" name="On function" sid="536674808393238" type="Function">
+                            <param id="0" name="Name">&quot;banner_full_ads&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="805646785063489">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="581662755100706" type="WebStorage">
+                                    <param id="0" name="Key">&quot;REMOVE_ADS&quot;</param>
+                                </condition>
+                                <condition id="7" name="Compare key value (as number)" sid="582586494116629" type="WebStorage">
+                                    <param id="0" name="Key">&quot;REMOVE_ADS&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block disabled="1" sid="584487272483918">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="224270500142848" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="142465213820068" type="System">
+                                    <param id="0" name="Variable">interstitial_ads_show_counter</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block bookmark="1" disabled="1" sid="228465970178118">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="726122283653840" type="System">
+                                            <param id="0" name="Variable">interstitial_ads_show_counter</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">interstitial_ads_counter</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" disabled="1" sid="224618138209416">
+                                            <conditions>
+                                                <condition id="-32" name="Is on platform" sid="551201749295965" type="System">
+                                                    <param id="0" name="Platform">1</param>
+                                                </condition>
+                                                <condition id="-32" name="Is on platform" sid="654503456585694" type="System">
+                                                    <param id="0" name="Platform">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="989354797940408" type="System">
+                                                    <param id="0" name="Variable">interstitial_ads_show_counter</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="685849537078453" type="System">
+                                                    <param id="0" name="Seconds">3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

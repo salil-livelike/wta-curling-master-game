@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_gameover</name>
+    <events>
+        <variable constant="0" name="page_gameover" sid="5697519941089734" static="0" type="number">0</variable>
+        <variable constant="0" name="go" sid="662679457060130" static="0" type="number">0</variable>
+        <event-group description="" sid="5606223317546699" title="GAME OVER" />
+        <event-block sid="568075264645761">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="557147632639032" type="System">
+                    <param id="0" name="Variable">go</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="622777923977120" type="Touch">
+                    <param id="0" name="Object">btns</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="163488134315766" type="System">
+                    <param id="0" name="Variable">page_gameover</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is in touch" sid="266701582253330" type="Touch" />
+                <condition id="-9" name="Layer is visible" sid="928946835661736" type="System">
+                    <param id="0" name="Layer">&quot;gameover&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="785047358439804">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="112935126727636" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="325391812014266" type="System">
+                            <param id="0" name="Variable">go</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="736146663174683">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="511532685499247" type="System">
+                                    <param id="0" name="Variable">banner_type_show</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="423675862927694" type="System">
+                                    <param id="0" name="Variable">go</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="710038457080200">
+                                    <conditions>
+                                        <condition id="3" name="Local key exists" sid="548835537814844" type="WebStorage">
+                                            <param id="0" name="Key">&quot;REMOVE_ADS&quot;</param>
+                                        </condition>
+                                        <condition id="7" name="Compare key value (as number)" sid="801050216723413" type="WebStorage">
+                                            <param id="0" name="Key">&quot;REMOVE_ADS&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="902958487973904">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="779853266319617" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="978390586018511" type="Function">
+                                            <param id="0" name="Name">&quot;banner_full_ads&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1228295380284746">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2764829265832889" type="System">
+                    <param id="0" name="Variable">page_gameover</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2125713749933466">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="6763526907093214" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Btn Play</comment>
+                        <event-block sid="2049612208870703">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="1404392247310227" type="button">
+                                    <param id="0" name="Unique ID">42</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="2789704801925835" type="button">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5596888603731795">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5908421709210043" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="846304472962307" type="System">
+                            <param id="0" name="Variable">go</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="9119076103114264" type="Function">
+                            <param id="0" name="Name">&quot;new&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9973587667710396" type="System">
+                            <param id="0" name="Variable">page_gameplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5068087189480383" type="System">
+                            <param id="0" name="Variable">page_main</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2179936756425557" type="System">
+                            <param id="0" name="Variable">page_howtoplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="6512694824871101" type="System">
+                            <param id="0" name="Layer">&quot;gameover&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6529017825860828" type="Function">
+                            <param id="0" name="Name">&quot;score_best&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="8037043826843172" type="Function">
+                            <param id="0" name="Name">&quot;rating&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3636653084021269" type="System">
+                            <param id="0" name="Variable">page_start</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7799853351866458">
+            <conditions>
+                <condition id="-22" name="Else" sid="1188046016248892" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8515484358140255">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="8466782337570375" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="7484346386991501" type="System">
+                            <param id="0" name="Layer">&quot;gameover&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Btn Play</comment>
+                        <event-block sid="6004086364582323">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="700854109319183" type="button">
+                                    <param id="0" name="Unique ID">42</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="7185028632116452" type="button">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

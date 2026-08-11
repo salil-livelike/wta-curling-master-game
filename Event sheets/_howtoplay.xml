@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_howtoplay</name>
+    <events>
+        <variable constant="0" name="page_howtoplay" sid="6205843028900087" static="0" type="number">0</variable>
+        <event-group description="" sid="4382684106434741" title="HOW TO PLAY" />
+        <comment>Start How To Play</comment>
+        <event-block sid="6404995457415846">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9203601170368306" type="System">
+                    <param id="0" name="Variable">page_howtoplay</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1054648071606003">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="5418479960391161" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1958191272718266">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="993781185326202" type="System">
+                                    <param id="0" name="Variable">page_gameover</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="3758286546698015" type="System">
+                                    <param id="0" name="Layer">&quot;reward_continue&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="9259980279542778" type="System">
+                                    <param id="0" name="Layer">&quot;reward_video&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7150685889080761">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7991177810191817" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="4581196368684234" type="System">
+                            <param id="0" name="Layer">&quot;gameover&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="8952916101603672" type="System">
+                            <param id="0" name="Layer">&quot;main&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="7738135419441519" type="System">
+                            <param id="0" name="Layer">&quot;settings&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="1766051543715372" type="System">
+                            <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="5212302553726888" type="System">
+                            <param id="0" name="Layer">&quot;popup_bg&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="13149236198143">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="5611765810474203" type="button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="7103932756827837" type="button">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5076201596570727">
+            <conditions>
+                <condition id="-22" name="Else" sid="9668327672517481" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3677885531795836">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4062167866106663" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="98812846059878" type="System">
+                            <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="2293376885713106" type="System">
+                            <param id="0" name="Layer">&quot;popup_bg&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7216637803858242">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="1699708026956218" type="button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                                <condition id="-16" name="Is on layer" sid="3334975815942053" type="button">
+                                    <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="3139379966483846" type="button">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="9711457456554568">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7572520648720034" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="427785521398183">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3474155568592812" type="System">
+                                    <param id="0" name="Variable">page_settings</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set layer visible" sid="3240651867866098" type="System">
+                                    <param id="0" name="Layer">&quot;settings&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>HOW TO PLAY BUTTONS</comment>
+        <event-block disabled="1" sid="8959581082018623">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="3048338590997788" type="System">
+                    <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Close button</comment>
+                <event-block disabled="1" sid="9432896159035926">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="9612127990217054" type="button">
+                            <param id="0" name="Unique ID">61</param>
+                        </condition>
+                        <condition id="-16" name="Is on layer" sid="978601620445701" type="button">
+                            <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="2783382373849323">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="1883133657883263" type="Touch">
+                                    <param id="0" name="Object">button</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="8236775276349633" type="button">
+                                    <param id="0" name="Unique ID">61</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="7168336442185229" type="Function">
+                                    <param id="0" name="Name">&quot;howplayClose&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="682959738743058">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="6475798469027364" type="button">
+                            <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="4493320598559416" type="button">
+                            <param id="0" name="Unique ID">63</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="949629290914122">
+                            <conditions>
+                                <condition id="3" name="On touched object" sid="1314330325383679" type="Touch">
+                                    <param id="0" name="Object">button</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="9827465618430808" type="button">
+                                    <param id="0" name="Unique ID">63</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="5725890438658793" type="Function">
+                                    <param id="0" name="Name">&quot;howplayClose&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5535605727075552">
+            <conditions>
+                <condition id="0" name="On function" sid="9408334076721299" type="Function">
+                    <param id="0" name="Name">&quot;howplayClose&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5765809750429922">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="8227911135799984" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="7078195579901703" type="button">
+                            <param id="0" name="Unique ID">61</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="click_animation" id="14" name="Stop" sid="6673865957692747" type="button">
+                            <param id="0" name="Stop Mode">2</param>
+                        </action>
+                        <action behavior="click_animation" id="10" name="Start" sid="5039503414343002" type="button" />
+                        <action id="14" name="Log" sid="685587546542259" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;button_clicked&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8012812879170923">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="8084330621533604" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7205775049429981" type="Function">
+                            <param id="0" name="Name">&quot;layerFade&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="2530813365204935" type="Function">
+                            <param id="0" name="Name">&quot;click&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="7328908005009239" type="System">
+                            <param id="0" name="Seconds">layer_delay_start_time</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2645059852573953" type="System">
+                            <param id="0" name="Variable">page_howtoplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9546316163165014">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1768007997091368" type="System">
+                                    <param id="0" name="Variable">page_start</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="3737456007843778" type="System">
+                                    <param id="0" name="Variable">page_settings</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3182673923941834" type="System">
+                                    <param id="0" name="Variable">page_gameplay</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6824409396540328">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1221339202332229" type="System">
+                                    <param id="0" name="Variable">page_start</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4337048098701357" type="System">
+                                    <param id="0" name="Variable">page_howtoplay</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4167882993237654">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="1735428607907799" type="System" />
+                                        <condition id="-14" name="Pick by unique ID" sid="7202906118484511" type="button">
+                                            <param id="0" name="Unique ID">61</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="3881485815721457" type="button">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="6487754609756562">
+            <conditions>
+                <condition id="0" name="On function" sid="2968214046458416" type="Function">
+                    <param id="0" name="Name">&quot;howplayPlay&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block disabled="1" sid="8582878609747123">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="9824105094017015" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="4393966888858091" type="button">
+                            <param id="0" name="Unique ID">63</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="click_animation" id="14" name="Stop" sid="7607011417588902" type="button">
+                            <param id="0" name="Stop Mode">2</param>
+                        </action>
+                        <action behavior="click_animation" id="10" name="Start" sid="1003699554777073" type="button" />
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="7197931273675329">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="6106030452100946" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1027036404741268" type="Function">
+                            <param id="0" name="Name">&quot;layerFade&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="2421269355931123" type="Function">
+                            <param id="0" name="Name">&quot;click&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2624506856709992" type="System">
+                            <param id="0" name="Seconds">layer_delay_start_time</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3434103461500262" type="System">
+                            <param id="0" name="Variable">page_settings</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8314994703801113" type="System">
+                            <param id="0" name="Variable">page_howtoplay</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3550501801980291" type="System">
+                            <param id="0" name="Variable">page_gameplay</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="736867298533098">
+            <conditions>
+                <condition id="17" name="On tap object" sid="535730574152387" type="Touch">
+                    <param id="0" name="Object">how_to_play_bg</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="383596804830872" type="System">
+                    <param id="0" name="Layer">&quot;howtoplay&quot;</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="492360227870020" type="Touch">
+                    <param id="0" name="Object">sound_button</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="729202101971978" type="Function">
+                    <param id="0" name="Name">&quot;howplayClose&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

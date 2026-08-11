@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>_settings</name>
+    <events>
+        <include>_template</include>
+        <include>_langs</include>
+        <include>2) Ads</include>
+        <include>_characters</include>
+        <include>_game_center</include>
+        <include>_btns</include>
+        <include>_layers</include>
+        <include>_main</include>
+        <include>_howtoplay</include>
+        <include>_settings_page</include>
+        <include>_gameplay</include>
+        <include>_gameover</include>
+        <include>GAME</include>
+        <comment>App INFO</comment>
+        <variable constant="0" name="APP_NAME" sid="2484053498165738" static="0" type="text">Go To Dot</variable>
+        <comment>App ID</comment>
+        <variable constant="0" name="APP_ID_IOS" sid="6492188829968503" static="0" type="text"></variable>
+        <variable constant="0" name="APP_ID_ANDROID" sid="2275242422296454" static="0" type="text">com.your.appid</variable>
+        <comment>Layer fade speed</comment>
+        <variable constant="0" name="layer_delay_start_time" sid="3647658645698946" static="0" type="number">0.15</variable>
+        <variable constant="0" name="shadow_duration_time" sid="1567323074625974" static="0" type="number">0.15</variable>
+        <comment>GAME CENTER</comment>
+        <comment>Leaderboards</comment>
+        <variable constant="0" name="LEADERBOARD_ID" sid="3723636339429768" static="0" type="text"></variable>
+        <variable constant="0" name="gamecenter_leaderboard_ios_ID" sid="1075577856434613" static="0" type="text"></variable>
+        <variable constant="0" name="gamecenter_leaderboard_android_ID" sid="5307297386831306" static="0" type="text"></variable>
+        <comment>Share button</comment>
+        <variable constant="0" name="share_image_URL" sid="544834007270483" static="0" type="text"></variable>
+        <comment>------ PURCHASES ------ </comment>
+        <comment>Remove Ads</comment>
+        <variable constant="0" name="REMOVE_ADS_ID" sid="6967025274649699" static="0" type="text"></variable>
+        <variable constant="0" name="remove_ads_ios" sid="2177492332082889" static="0" type="text"></variable>
+        <variable constant="0" name="remove_ads_android" sid="6831252610422217" static="0" type="text"></variable>
+        <comment>Unlock All Characters</comment>
+        <variable constant="0" name="UNLOCK_ALL_ID" sid="6132505374945411" static="0" type="text"></variable>
+        <variable constant="0" name="unlock_characters_ios_ID" sid="5554128541642267" static="0" type="text"></variable>
+        <variable constant="0" name="unlock_characters_android_ID" sid="69260766636423" static="0" type="text"></variable>
+        <comment>Buy coins</comment>
+        <variable constant="0" name="buy_coins_ios_ID" sid="4805356086771237" static="0" type="text"></variable>
+        <variable constant="0" name="buy_coins_android_ID" sid="876875488541442" static="0" type="text"></variable>
+        <comment>------ GAME SETTINGS ------ </comment>
+        <variable constant="0" name="score" sid="5627806517615453" static="0" type="number">0</variable>
+        <variable constant="0" name="coins" sid="223420545126559" static="0" type="number">0</variable>
+        <variable constant="0" name="coins_unlock" sid="519776177538494" static="0" type="number">100</variable>
+        <variable constant="0" name="coins_reward" sid="7693783445124751" static="0" type="number">20</variable>
+        <variable constant="0" name="score_best" sid="4667867024956312" static="0" type="number">0</variable>
+        <comment>Rating Show Counter</comment>
+        <variable constant="0" name="rating_counter" sid="7288724832105169" static="0" type="number">4</variable>
+        <variable constant="0" name="rating_show_counter" sid="5383106735113502" static="0" type="number">0</variable>
+        <comment>Interstitial Ads Show Counter</comment>
+        <variable constant="0" name="interstitial_ads_counter" sid="8744354729318286" static="0" type="number">5</variable>
+        <variable constant="0" name="interstitial_ads_show_counter" sid="4363094208416541" static="0" type="number">0</variable>
+        <comment>Banner Type Show (1 - show if load, 2 - show if game over)</comment>
+        <variable comment=" " constant="0" name="banner_type_show" sid="3881893585667122" static="0" type="number">1</variable>
+        <comment>Share URL</comment>
+        <variable comment=" " constant="0" name="share_url" sid="887262735398502" static="0" type="text"></variable>
+        <comment>Like URL</comment>
+        <variable comment=" " constant="0" name="like_url" sid="3569207876928162" static="0" type="text"></variable>
+        <variable comment=" " constant="0" name="twitter_url" sid="1934125450393607" static="0" type="text"></variable>
+        <variable comment=" " constant="0" name="site_url" sid="9814695937845694" static="0" type="text"></variable>
+        <comment>More Games URL</comment>
+        <variable comment=" " constant="0" name="MORE_GAMES_URL" sid="6037417996977002" static="0" type="text"></variable>
+        <variable comment=" " constant="0" name="more_games_url_ios" sid="7085287721169439" static="0" type="text"></variable>
+        <variable comment=" " constant="0" name="more_games_url_android" sid="3619173351872774" static="0" type="text"></variable>
+        <comment bookmark="1">Coin Counter Reward</comment>
+        <variable comment=" " constant="0" name="coinSave" sid="5821364065648305" static="0" type="number">0</variable>
+        <variable comment=" " constant="0" name="coinUnlock" sid="3909668293718382" static="0" type="number">1000</variable>
+        <variable constant="0" name="isSoundMute" sid="983372190869642" static="0" type="number">0</variable>
+        <event-group description="" sid="5512247713974051" title="Start" />
+        <comment>Start layout</comment>
+        <event-block sid="2495083774454381">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1302704792994938" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1633981246465122">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="8422608935905329" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="4" name="Clear local storage" sid="5444330403019803" type="WebStorage" />
+                        <action id="0" name="Call function" sid="8689420206888427" type="Function">
+                            <param id="0" name="Name">&quot;unlockAllCharacters&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="851931414800441" type="Function">
+                            <param id="0" name="Name">&quot;chooseBG&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="237992230410718" type="Function">
+                            <param id="0" name="Name">&quot;setSound&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>LOAD WEB STORAGE</comment>
+                        <comment>Load WebStorege Sound</comment>
+                        <event-block sid="2044807599054568">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="6260605020985331" type="WebStorage">
+                                    <param id="0" name="Key">&quot;sound&quot;</param>
+                                </condition>
+                                <condition id="7" name="Compare key value (as number)" sid="8380866375720473" type="WebStorage">
+                                    <param id="0" name="Key">&quot;sound&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="1657898558312592">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2886384752710694" type="System" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <comment>Load WebStorege Coins</comment>
+                        <event-block sid="28099142273282">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="6475378067597713" type="WebStorage">
+                                    <param id="0" name="Key">&quot;coins_go_to_dot&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="3873518641178373" type="System">
+                                    <param id="0" name="Variable">coins</param>
+                                    <param id="1" name="Value">WebStorage.LocalValue(&quot;coins_go_to_dot&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="168631862094921">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="427591158774960" type="SpriteFont">
+                                            <param id="0" name="Instance variable">class</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;text_coins&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="143485693647458" type="SpriteFont">
+                                            <param id="0" name="Text">coins</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Load WebStorege Achievement</comment>
+                        <event-block sid="826324002045335">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="8240522599698026" type="WebStorage">
+                                    <param id="0" name="Key">&quot;AchievementGames&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="8164845863219939">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="535260683718145" type="WebStorage">
+                                    <param id="0" name="Key">&quot;AchievementTotalScore&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="4582884456315706">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="5267936593420412" type="WebStorage">
+                                    <param id="0" name="Key">&quot;AchievementCompletionScore&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <comment>Load WebStorege Score Best</comment>
+                        <event-block sid="5919159202515414">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="8940506804347582" type="WebStorage">
+                                    <param id="0" name="Key">&quot;score_best_go_to_dot&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1419423940179195" type="System">
+                                    <param id="0" name="Variable">score_best</param>
+                                    <param id="1" name="Value">WebStorage.LocalValue(&quot;score_best_go_to_dot&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="955136345371953">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="850261069542802" type="SpriteFont">
+                                            <param id="0" name="Instance variable">class</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;text_bestscore&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="686449755557733" type="SpriteFont">
+                                            <param id="0" name="Text">lang_bestscore_text&amp;&quot;: &quot;&amp;score_best</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Load Remove Ads ID</comment>
+                        <event-block sid="8167772895634868">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="9471468124770565" type="System">
+                                    <param id="0" name="Platform">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9653596161806569" type="System">
+                                    <param id="0" name="Variable">REMOVE_ADS_ID</param>
+                                    <param id="1" name="Value">remove_ads_ios</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4252108391961017">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="777972274566143" type="System">
+                                    <param id="0" name="Platform">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4572384340174145" type="System">
+                                    <param id="0" name="Variable">REMOVE_ADS_ID</param>
+                                    <param id="1" name="Value">remove_ads_android</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Load UnlockAll ID</comment>
+                        <event-block sid="6084931762064681">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="8757417506100052" type="System">
+                                    <param id="0" name="Platform">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6441054417821252" type="System">
+                                    <param id="0" name="Variable">UNLOCK_ALL_ID</param>
+                                    <param id="1" name="Value">unlock_characters_ios_ID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7964766914084759">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="8285701073732915" type="System">
+                                    <param id="0" name="Platform">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="1776979733829001" type="System">
+                                    <param id="0" name="Variable">UNLOCK_ALL_ID</param>
+                                    <param id="1" name="Value">unlock_characters_android_ID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>More Games URL</comment>
+                        <event-block sid="8939473228773522">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="1094860333294859" type="System">
+                                    <param id="0" name="Platform">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="6004589428913589" type="System">
+                                    <param id="0" name="Variable">MORE_GAMES_URL</param>
+                                    <param id="1" name="Value">more_games_url_ios</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9430319844938336">
+                            <conditions>
+                                <condition id="-32" name="Is on platform" sid="612063803833214" type="System">
+                                    <param id="0" name="Platform">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="4187627541927861" type="System">
+                                    <param id="0" name="Variable">MORE_GAMES_URL</param>
+                                    <param id="1" name="Value">more_games_url_android</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Load WebStorege GIFT</comment>
+                        <event-block sid="8987682483687961">
+                            <conditions>
+                                <condition id="3" name="Local key exists" sid="2733927324478568" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gift&quot;</param>
+                                </condition>
+                                <condition id="7" name="Compare key value (as number)" sid="2659642119078993" type="WebStorage">
+                                    <param id="0" name="Key">&quot;gift&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="300419208883176">
+            <conditions>
+                <condition id="0" name="On function" sid="527310601434435" type="Function">
+                    <param id="0" name="Name">&quot;setSound&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="160814074761029" type="sound_button" />
+                <action id="5" name="Set frame" sid="748992354778202" type="sound_button">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="973383794873340" type="System">
+                    <param id="0" name="Variable">isSoundMute</param>
+                    <param id="1" name="Value">Browser.ExecJS(&quot;localStorage.getItem(&apos;curling_master_tnt_soundIsMute&apos;) || &apos;1&apos;&quot;)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="968386736228862">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="939599143751122" type="System">
+                            <param id="0" name="Variable">isSoundMute</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="363300964146232" type="sound_button">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="571252617986910" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="286839142462710">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="864910948473785" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="215303138183843" type="sound_button">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="666688134177003" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="513686741396910">
+            <conditions>
+                <condition id="3" name="On touched object" sid="781263711719965" type="Touch">
+                    <param id="0" name="Object">sound_button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="334803944290193">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="191382116230741" type="sound_button">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="511541321053082" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="17" name="Execute Javascript" sid="789997473844426" type="Browser">
+                            <param id="0" name="Javascript">&quot;localStorage.setItem(&apos;curling_master_tnt_soundIsMute&apos;, String(1));&quot;</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="164132858020129" type="sound_button">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="548875444593886">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="544174776702310" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set silent" sid="230131349088577" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="17" name="Execute Javascript" sid="103477140245462" type="Browser">
+                            <param id="0" name="Javascript">&quot;localStorage.setItem(&apos;curling_master_tnt_soundIsMute&apos;, String(0));&quot;</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="795637645657350" type="sound_button">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="878481539029734" type="Audio">
+                            <param id="0" name="Audio file">music</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
