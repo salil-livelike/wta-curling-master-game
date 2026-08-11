@@ -241,46 +241,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="dot" uid="78">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="EaseTween">
-                            <properties>
-                                <active-on-start>No</active-on-start>
-                                <tweened-property>Size(Ratio)</tweened-property>
-                                <function>EaseOutElastic</function>
-                                <initial>1.5</initial>
-                                <target>1</target>
-                                <duration>1</duration>
-                                <wait>0,0</wait>
-                                <playback-mode>Play Once</playback-mode>
-                                <value>0</value>
-                                <coordinate-mode>Absolute</coordinate-mode>
-                                <force-initial-on-start>No</force-initial-on-start>
-                                <tween-group></tween-group>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>320</x>
-                        <y>440</y>
-                        <z>0</z>
-                        <width>84.491828918</width>
-                        <height>84.491828918</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.507092178</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="dot2" uid="82">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -753,6 +713,46 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="dot" uid="78">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="EaseTween">
+                            <properties>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Size(Ratio)</tweened-property>
+                                <function>EaseOutElastic</function>
+                                <initial>1.5</initial>
+                                <target>1</target>
+                                <duration>1</duration>
+                                <wait>0,0</wait>
+                                <playback-mode>Play Once</playback-mode>
+                                <value>0</value>
+                                <coordinate-mode>Absolute</coordinate-mode>
+                                <force-initial-on-start>No</force-initial-on-start>
+                                <tween-group></tween-group>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>320</x>
+                        <y>440.611236572</y>
+                        <z>0</z>
+                        <width>99.501480103</width>
+                        <height>99.501480103</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.507092178</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
