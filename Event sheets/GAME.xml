@@ -1913,5 +1913,75 @@
                 </action>
             </actions>
         </event-block>
+        <comment>How To Play gate. ArcadeScoreToDisplay is populated asynchronously by Get Game Config, so 0 on the first tick is ambiguous - it means either "new player" or "config has not arrived". The decision is therefore held until either a score above 0 shows up (returning player, skip straight into play) or intro_timeout seconds elapse (treat as a new player and show the instructions). Nothing but the court background is on screen while waiting. If the config never arrives this falls open to showing the instructions, which is the safe direction.</comment>
+        <event-block sid="4200000000025684">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4200000000032105" type="System">
+                    <param id="0" name="Variable">intro_decided</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="4200000000038526" type="System">
+                    <param id="0" name="Variable">intro_wait</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+            <sub-events>
+                <comment>Returning player: the config came back with a score, so skip the instructions.</comment>
+                <event-block sid="4200000000044947">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4200000000051368" type="System">
+                            <param id="0" name="Variable">ArcadeScoreToDisplay</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4200000000057789" type="System">
+                            <param id="0" name="Variable">intro_decided</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="4200000000064210" type="Function">
+                            <param id="0" name="Name">&quot;layerFade&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4200000000070631" type="System">
+                            <param id="0" name="Seconds">layer_delay_start_time</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4200000000077052" type="System">
+                            <param id="0" name="Variable">page_gameplay</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Timed out with no score reported: treat as a new player and show the instructions. The intro_decided check makes this mutually exclusive with the block above, which has already run this tick.</comment>
+                <event-block sid="4200000000083473">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4200000000089894" type="System">
+                            <param id="0" name="Variable">intro_decided</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4200000000096315" type="System">
+                            <param id="0" name="Variable">intro_wait</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">intro_timeout</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4200000000102736" type="System">
+                            <param id="0" name="Variable">intro_decided</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4200000000109157" type="System">
+                            <param id="0" name="Variable">page_howtoplay</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
